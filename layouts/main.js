@@ -8,7 +8,7 @@ import Page from "./page";
 const MainLayout = ({ children }) => {
   return (
     <BaseLayout>
-      <div>
+      <div className="font-body tracking-wider">
         <Header />
         <Page>{children}</Page>
         <Footer />

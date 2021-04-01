@@ -4,13 +4,18 @@ import FooterItem from "../components/footer-item";
 export default function Footer() {
   return (
     <footer className="w-full bg-blue-900 text-blue-100">
-      <div className="flex justify-evenly flex-wrap m-6">
-        <FooterItem title="Entregas">
+      <div className="flex justify-evenly flex-wrap flex-col md:flex-row m-6">
+        <FooterItem title="NOSOTROS">
+          <p>
+            Nosotros somos... <br />
+          </p>
+        </FooterItem>
+        <FooterItem title="ENTREGAS">
           <p>
             Entregamos de lunes a domingo <br />
           </p>
         </FooterItem>
-        <FooterItem title="Siguenos">
+        <FooterItem title="CONTACTO">
           <a href="#">
             <AiFillInstagram className="h-6 w-6" />
           </a>

@@ -1,7 +1,11 @@
+import { TextSm, TextBase, TextLg } from "../components/text";
+
 export default function FooterItem({ title, children }) {
   return (
     <div className="p-4">
-      <h1 className="font-bold text-lg pb-2">{title}</h1>
+      <TextLg className="pb-2" bold>
+        {title}
+      </TextLg>
       {children}
     </div>
   );
