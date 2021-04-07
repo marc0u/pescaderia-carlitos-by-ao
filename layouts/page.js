@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 
 const Page = ({ children }) => (
-  <main>
+  <main className="min-h-screen">
     <div>{children}</div>
   </main>
 );
