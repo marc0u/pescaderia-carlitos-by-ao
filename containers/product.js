@@ -4,15 +4,15 @@ import ProductDetail from "../components/prosuct-detail";
 
 function ProductContainer({ router }) {
   const [product, setProduct] = useState({});
-  const { id } = router.query;
+  const { asPath } = router;
 
   useEffect(
     () =>
-      id &&
-      fetch(`http://localhost:3000/api/mariscos/${id}`)
+      asPath &&
+      fetch(`http://localhost:3000/api${asPath}`)
         .then((res) => res.json())
         .then((data) => setProduct(data)),
-    [id]
+    [asPath]
   );
   return <ProductDetail product={product} />;
 }

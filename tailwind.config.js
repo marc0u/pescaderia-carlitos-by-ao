@@ -6,6 +6,9 @@ module.exports = {
     fontFamily: {
       body: ["Oswald"],
     },
+    maxHeight: {
+      "96px": "96px",
+    },
   },
   variants: {
     extend: {},
