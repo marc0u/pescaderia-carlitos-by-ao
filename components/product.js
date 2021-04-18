@@ -4,8 +4,9 @@ import { TextBase, TextLg } from "./text";
 import { parseCurrency } from "../utils/prices";
 
 function Product({ id, imgSrc, price, children, router }) {
+  const category = router.asPath.match(/.+?(?=\/)/g);
   return (
-    <Link href={`${router.pathname}/${id}`}>
+    <Link href={`${category ? category : router.asPath}/${id}`}>
       <a className="p-2">
         <div className="transform transition ease-in-out duration-500 hover:scale-105">
           <img src={imgSrc} alt={children} className="h-60 m-auto" />
