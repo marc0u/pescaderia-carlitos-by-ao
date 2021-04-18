@@ -1,11 +1,11 @@
-const mariscos = [
+const pescados = [
   {
     id: 1,
     imageUrl:
-      "https://i1.wp.com/ayfmarket.cl/wp-content/uploads/2020/07/DSC_0133.jpg?w=600&ssl=1",
-    title: "CAMARONES COCIDOS | 1 KG (APROX)",
-    price: 11990,
-    discounted_price: 11990,
+      "https://cdn.shopify.com/s/files/1/0215/9899/4504/products/medallon-de-atun-150-180-g-aprox-pescados-y-mariscos-granja-magdalena-784235_360x.png?v=1571987104",
+    title: "MEDALLÓN DE ATÚN | 200 G (APROX)",
+    price: 3990,
+    discounted_price: 3390,
     description:
       "Medallones de atún congelados se producen con atún de aleta amarilla. La carne de atún posee grandes propiedades nutritivas, propias del pescado azul: es rico en proteínas de alto valor biológico y asimilables por el cuerpo humano.",
   },
@@ -31,4 +31,4 @@ const mariscos = [
   },
 ];
 
-export default mariscos;
+export default pescados;

@@ -1,45 +1,30 @@
+import { useEffect, useState } from "react";
 import Product from "../components/product";
 import ProductsCollection from "../components/products-collection";
 
 export default function PescadosContainer() {
+  const [products, setProducts] = useState([]);
+
+  useEffect(
+    () =>
+      fetch("http://localhost:3000/api/pescados")
+        .then((res) => res.json())
+        .then((data) => setProducts(data)),
+    []
+  );
+
   return (
     <ProductsCollection title="PESCADOS">
-      <Product
-        imgSrc="https://cdn.shopify.com/s/files/1/0114/3357/4464/products/salom_procion_grande.png"
-        price="5.990"
-      >
-        SALMÓN
-      </Product>
-      <Product
-        imgSrc="https://cdn.shopify.com/s/files/1/0114/3357/4464/products/salom_procion_grande.png"
-        price="5.990"
-      >
-        SALMÓN
-      </Product>
-      <Product
-        imgSrc="https://cdn.shopify.com/s/files/1/0114/3357/4464/products/salom_procion_grande.png"
-        price="5.990"
-      >
-        SALMÓN
-      </Product>
-      <Product
-        imgSrc="https://cdn.shopify.com/s/files/1/0114/3357/4464/products/salom_procion_grande.png"
-        price="5.990"
-      >
-        SALMÓN
-      </Product>
-      <Product
-        imgSrc="https://cdn.shopify.com/s/files/1/0114/3357/4464/products/salom_procion_grande.png"
-        price="5.990"
-      >
-        SALMÓN
-      </Product>
-      <Product
-        imgSrc="https://cdn.shopify.com/s/files/1/0114/3357/4464/products/salom_procion_grande.png"
-        price="5.990"
-      >
-        SALMÓN
-      </Product>
+      {products.map((item) => (
+        <Product
+          key={item.id}
+          id={item.id}
+          imgSrc={item.imageUrl}
+          price={item.price}
+        >
+          {item.title}
+        </Product>
+      ))}
     </ProductsCollection>
   );
 }

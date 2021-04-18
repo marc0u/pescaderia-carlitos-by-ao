@@ -1,20 +1,47 @@
 import { withRouter } from "next/router";
 import { useState, useEffect } from "react";
 import ProductDetail from "../components/prosuct-detail";
+import ProductsCollection from "../components/products-collection";
+import Product from "../components/product";
+import getRandomProducts from "../utils/products";
 
 function ProductContainer({ router }) {
   const [product, setProduct] = useState({});
+  const [products, setProducts] = useState([]);
   const { asPath } = router;
+  const category = asPath.match(/(?<=\/).+?(?=\/)/g)[0];
 
-  useEffect(
-    () =>
-      asPath &&
+  useEffect(() => {
+    asPath &&
       fetch(`http://localhost:3000/api${asPath}`)
         .then((res) => res.json())
-        .then((data) => setProduct(data)),
-    [asPath]
+        .then((data) => {
+          setProduct(data);
+          fetch(`http://localhost:3000/api/${category}`)
+            .then((res) => res.json())
+            .then((cat) => {
+              setProducts(getRandomProducts(cat, 2, data.id));
+            });
+        });
+  }, [asPath]);
+
+  return (
+    <div>
+      <ProductDetail product={product} />
+      <ProductsCollection title="PRODUCTOS RELACIONADOS">
+        {products.map((item) => (
+          <Product
+            key={item.id}
+            id={item.id}
+            imgSrc={item.imageUrl}
+            price={item.price}
+          >
+            {item.title}
+          </Product>
+        ))}
+      </ProductsCollection>
+    </div>
   );
-  return <ProductDetail product={product} />;
 }
 
 export default withRouter(ProductContainer);

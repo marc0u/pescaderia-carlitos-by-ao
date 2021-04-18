@@ -1,15 +1,18 @@
 import Link from "next/link";
 import { withRouter } from "next/router";
-import { TextBase, TextSm } from "./text";
+import { TextBase, TextLg } from "./text";
+import { parseCurrency } from "../utils/prices";
 
 function Product({ id, imgSrc, price, children, router }) {
   return (
     <Link href={`${router.pathname}/${id}`}>
-      <a className="max-w-xs w-auto sm:w-1/2 md:w-1/3 p-2 transform transition ease-in-out duration-500 hover:scale-105">
-        <img src={imgSrc} />
+      <a className="p-2">
+        <div className="transform transition ease-in-out duration-500 hover:scale-105">
+          <img src={imgSrc} alt={children} className="h-60 m-auto" />
+        </div>
         <div className="px-4 py-2">
-          <TextBase>{children}</TextBase>
-          <TextSm>{price}</TextSm>
+          <TextLg className="text-center">{children}</TextLg>
+          <TextBase className="text-center">{parseCurrency(price)}</TextBase>
         </div>
       </a>
     </Link>

@@ -1,19 +1,18 @@
 import { AiFillInstagram } from "react-icons/ai";
 import FooterItem from "../components/footer-item";
+import { TextBase } from "../components/text";
 
 export default function Footer() {
   return (
     <footer className="w-full bg-blue-900 text-blue-100">
-      <div className="flex justify-evenly flex-wrap flex-col md:flex-row m-6">
+      <div className="flex justify-evenly flex-wrap flex-col md:flex-row px-4 py-6">
         <FooterItem title="NOSOTROS">
-          <p>
-            Nosotros somos... <br />
-          </p>
+          <TextBase>
+            Encuantra los mejores pescados y mariscos congelados.
+          </TextBase>
         </FooterItem>
         <FooterItem title="ENTREGAS">
-          <p>
-            Entregamos de lunes a domingo <br />
-          </p>
+          <TextBase>Entregamos de lunes a domingo.</TextBase>
         </FooterItem>
         <FooterItem title="CONTACTO">
           <a href="#">
