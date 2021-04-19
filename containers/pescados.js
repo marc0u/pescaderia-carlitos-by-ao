@@ -7,9 +7,7 @@ export default function PescadosContainer() {
 
   useEffect(
     () =>
-      fetch(
-        "https://pescaderia-carlitos-by-ao.vercel.app/https://pescaderia-carlitos-by-ao.vercel.app/api/pescados"
-      )
+      fetch("https://pescaderia-carlitos-by-ao.vercel.app/api/pescados")
         .then((res) => res.json())
         .then((data) => setProducts(data)),
     []
