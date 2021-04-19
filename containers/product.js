@@ -13,11 +13,15 @@ function ProductContainer({ router }) {
 
   useEffect(() => {
     asPath &&
-      fetch(`http://localhost:3000/api${asPath}`)
+      fetch(
+        `https://pescaderia-carlitos-by-ao.vercel.app/https://pescaderia-carlitos-by-ao.vercel.app/api${asPath}`
+      )
         .then((res) => res.json())
         .then((data) => {
           setProduct(data);
-          fetch(`http://localhost:3000/api/${category}`)
+          fetch(
+            `https://pescaderia-carlitos-by-ao.vercel.app/https://pescaderia-carlitos-by-ao.vercel.app/api/${category}`
+          )
             .then((res) => res.json())
             .then((cat) => {
               setProducts(getRandomProducts(cat, 2, data.id));
