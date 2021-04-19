@@ -3,7 +3,7 @@ import { withRouter } from "next/router";
 import { TextBase, TextLg } from "./text";
 import { parseCurrency } from "../utils/prices";
 
-function Product({ id, imgSrc, price, children, router }) {
+function Category({ id, imgSrc, price, children, router, noPrice }) {
   const category = router.asPath.match(/.+?(?=\/)/g);
   return (
     <Link href={`${category ? category : router.asPath}/${id}`}>
@@ -13,11 +13,13 @@ function Product({ id, imgSrc, price, children, router }) {
         </div>
         <div className="px-4 py-2">
           <TextLg className="text-center">{children}</TextLg>
-          <TextBase className="text-center">{parseCurrency(price)}</TextBase>
+          {!noPrice && (
+            <TextBase className="text-center">{parseCurrency(price)}</TextBase>
+          )}
         </div>
       </a>
     </Link>
   );
 }
 
-export default withRouter(Product);
+export default withRouter(Category);

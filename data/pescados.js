@@ -29,6 +29,16 @@ const pescados = [
     description:
       "Medallones de congrio dorado nacional, con su piel y libres de espinas, ideales para freír, para el horno, o para preparar el tradicional caldillo. El congrio también contiene vitamina D, que favorece la absorción de calcio y su fijación al hueso, y regula el nivel de calcio en la sangre.",
   },
+  {
+    id: 4,
+    imageUrl:
+      "https://cdn.shopify.com/s/files/1/0215/9899/4504/products/filete-de-reineta-1-kg-aprox-pescados-y-mariscos-granja-magdalena-299532_500x.png?v=1606720511",
+    title: "FILETE DE REINETA | 1 KG (APROX)",
+    price: 9990,
+    discounted_price: null,
+    description:
+      "La reineta o pez hacha (brama australis) es un pez que se encuentra exclusivamente en Chile, desde la costa de Antofagasta hasta la región de Valdivia, y especialmente frente a Lebu, en la Región del Biobío. Su carne blanca y firme la hacen ideal para prepararla al horno, a la sartén, a la plancha o en ceviche.",
+  },
 ];
 
 export default pescados;
